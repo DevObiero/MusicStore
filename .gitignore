@@ -1,4 +1,6 @@
 #intellij crap
 .idea
+#build stuff
 out
 target
+*.iml
