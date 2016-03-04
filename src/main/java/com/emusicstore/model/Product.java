@@ -1,7 +1,9 @@
 package com.emusicstore.model;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 /**
  * Models a product.
@@ -14,11 +16,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
     private String productName;
+    @NotEmpty (message = "Product name must not be null.")
     private String productCategory;
     private String productDescription;
+    @Min (value = 0, message = "Product value must not be zero.")
     private  double productPrice;
     private String productCondition;
     private String productStatus;
+    @Min (value = 0, message = "Product unit must not be zero.")
     private int unitInStock;
     private String productManufacturer;
 

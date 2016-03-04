@@ -5,7 +5,7 @@
 <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post"
            commandName="product" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Name</label> <form:errors path="productName" cssStyle="collapse: #ff0000;" />
         <form:input path="productName" id="name" class="form-control"/>
     </div>
     <div class="form-group">
@@ -28,7 +28,7 @@
         <form:input path="productDescription" id="description" class="form-control"/>
     </div>
     <div class="form-group">
-        <label for="name">Price</label>
+        <label for="name">Price</label>  <form:errors path="productPrice" cssStyle="collapse: #ff0000;" />
         <form:textarea path="productPrice" id="description" class="form-control"/>
     </div>
     <div class="form-group">
